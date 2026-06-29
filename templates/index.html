@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}Free Parking — {{ city }}{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between mb-4">
+  <h4 class="mb-0">Free Parking Spots in {{ city }}</h4>
+  <div class="d-flex gap-2">
+    {% if spots %}
+    <a href="/geocode" class="btn btn-outline-primary btn-sm">Geocode → Map</a>
+    <a href="/clear" class="btn btn-outline-secondary btn-sm">Clear</a>
+    {% endif %}
+    <a href="/scrape" class="btn btn-primary btn-sm">Scrape Now</a>
+  </div>
+</div>
+
+{% if not spots %}
+<div class="alert alert-info">
+  No data yet. Click <strong>Scrape Now</strong> to fetch free parking spots.
+</div>
+{% else %}
+
+<div class="row mb-3 g-2">
+  <div class="col-auto">
+    <select id="typeFilter" class="form-select form-select-sm" onchange="applyFilters()">
+      <option value="">All types</option>
+      <option value="mall">Mall</option>
+      <option value="grocery">Grocery</option>
+      <option value="lot">Lot / Parkade</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+  <div class="col-auto">
+    <select id="validationFilter" class="form-select form-select-sm" onchange="applyFilters()">
+      <option value="">Any validation</option>
+      <option value="no">No validation needed</option>
+      <option value="yes">Validation required</option>
+    </select>
+  </div>
+  <div class="col-auto text-muted small align-self-center">
+    <span id="countLabel">{{ spots|length }} results</span>
+  </div>
+</div>
+
+<div class="table-responsive">
+  <table class="table table-hover align-middle bg-white rounded shadow-sm" id="spotsTable">
+    <thead class="table-light">
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Validation</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in spots %}
+      <tr data-type="{{ s.type }}" data-validation="{{ 'yes' if s.validation_required else 'no' }}">
+        <td>
+          <a href="{{ s.url }}" target="_blank" rel="noopener" class="text-decoration-none fw-semibold">
+            {{ s.name[:80] }}{% if s.name|length > 80 %}…{% endif %}
+          </a>
+          {% if s.address %}
+          <div class="text-muted small">{{ s.address }}</div>
+          {% endif %}
+        </td>
+        <td>
+          <span class="badge badge-{{ s.type }} text-white text-capitalize">{{ s.type }}</span>
+        </td>
+        <td>
+          {% if s.validation_required %}
+          <span class="validation-yes">Required</span>
+          {% else %}
+          <span class="validation-no">Not required</span>
+          {% endif %}
+        </td>
+        <td class="snippet">{{ s.snippet[:120] }}{% if s.snippet|length > 120 %}…{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+
+<script>
+function applyFilters() {
+  const type = document.getElementById("typeFilter").value;
+  const val  = document.getElementById("validationFilter").value;
+  const rows = document.querySelectorAll("#spotsTable tbody tr");
+  let visible = 0;
+  rows.forEach(row => {
+    const matchType = !type || row.dataset.type === type;
+    const matchVal  = !val  || row.dataset.validation === val;
+    row.style.display = matchType && matchVal ? "" : "none";
+    if (matchType && matchVal) visible++;
+  });
+  document.getElementById("countLabel").textContent = visible + " results";
+}
+</script>
+{% endblock %}

@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Royal City Centre",
+    "address": "610 6th St, New Westminster, BC",
+    "snippet": "Free underground parkade and rooftop parking. Over 1,500 stalls.",
+    "url": "https://royalcitycentre.ca/centre-info/",
+    "type": "mall",
+    "validation_required": false,
+    "source": "seed",
+    "city": "New Westminster BC Canada"
+  },
+  {
+    "name": "Shops at New West",
+    "address": "800 Carnarvon St, New Westminster, BC",
+    "snippet": "Covered parkade adjacent to New Westminster SkyTrain station.",
+    "url": "https://www.shopsatnewwest.com/",
+    "type": "mall",
+    "validation_required": true,
+    "source": "seed",
+    "city": "New Westminster BC Canada"
+  },
+  {
+    "name": "Safeway New Westminster Station",
+    "address": "800 Carnarvon St #220, New Westminster, BC",
+    "snippet": "Safeway inside Shops at New West, next to New Westminster SkyTrain. Shares the Shops at New West parkade.",
+    "url": "https://www.safeway.ca/stores/safeway-new-westminster-station",
+    "type": "grocery",
+    "validation_required": true,
+    "source": "seed",
+    "city": "New Westminster BC Canada"
+  },
+  {
+    "name": "Save-On-Foods Columbia Square",
+    "address": "1025 Columbia St, New Westminster, BC",
+    "snippet": "Save-On-Foods at Columbia Square Plaza. Surface lot parking available.",
+    "url": "https://www.saveonfoods.com/store-information/columbia/941",
+    "type": "grocery",
+    "validation_required": false,
+    "source": "seed",
+    "city": "New Westminster BC Canada"
+  },
+  {
+    "name": "Walmart Supercentre New Westminster",
+    "address": "805 Boyd St, New Westminster, BC",
+    "snippet": "Large free surface parking lot at Walmart Supercentre. No overnight parking.",
+    "url": "https://www.walmart.ca/en/store/5777",
+    "type": "grocery",
+    "validation_required": false,
+    "source": "seed",
+    "city": "New Westminster BC Canada"
+  },
+  {
+    "name": "Metropolis at Metrotown",
+    "address": "4700 Kingsway, Burnaby, BC",
+    "snippet": "BC's largest mall. Free parking up to 4 hours in most areas; some paid zones on weekdays.",
+    "url": "https://www.metropolisatmetrotown.com/en/plan-your-visit/parking/",
+    "type": "mall",
+    "validation_required": false,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  },
+  {
+    "name": "Crystal Mall",
+    "address": "4500 Kingsway, Burnaby, BC",
+    "snippet": "Free underground parking open 6am–11:30pm. Mainly Asian supermarkets and food court.",
+    "url": "https://www.crystalmallbc.com/",
+    "type": "mall",
+    "validation_required": false,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  },
+  {
+    "name": "The Amazing Brentwood",
+    "address": "4567 Lougheed Hwy, Burnaby, BC",
+    "snippet": "3 hours free parking on outdoor surface lots. Underground parkade is paid.",
+    "url": "https://theamazingbrentwood.com/getting-here/",
+    "type": "mall",
+    "validation_required": false,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  },
+  {
+    "name": "Highgate Village",
+    "address": "7155 Kingsway, Burnaby, BC",
+    "snippet": "Free underground and street parking. Save-On-Foods customers get 90 min free with vehicle registration.",
+    "url": "https://highgatevillage.ca/",
+    "type": "mall",
+    "validation_required": false,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  },
+  {
+    "name": "No Frills Burnaby Heights",
+    "address": "4780 Hastings St, Burnaby, BC",
+    "snippet": "Discount grocery store in Burnaby Heights with free underground parkade parking.",
+    "url": "https://www.nofrills.ca/store-locator/details/5927",
+    "type": "grocery",
+    "validation_required": false,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  },
+  {
+    "name": "Whole Foods Market North Burnaby",
+    "address": "4420 Lougheed Hwy, Burnaby, BC",
+    "snippet": "Organic grocery store near Brentwood area with free parking for shoppers.",
+    "url": "https://www.wholefoodsmarket.com/stores/northburnaby",
+    "type": "grocery",
+    "validation_required": true,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  },
+  {
+    "name": "Costco Burnaby",
+    "address": "3550 Brighton Ave, Burnaby, BC",
+    "snippet": "Warehouse store with large free surface parking lot. Membership required to shop.",
+    "url": "https://www.costco.ca/w/-/bc/burnaby/51",
+    "type": "grocery",
+    "validation_required": false,
+    "source": "seed",
+    "city": "Burnaby BC Canada"
+  }
+]

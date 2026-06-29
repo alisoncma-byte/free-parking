@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document>
+  <name>Free Parking — {{ city }}</name>
+  <description>Free parking spots scraped for {{ city }}</description>
+  <Style id="mall"><IconStyle><color>ff6c63ff</color></IconStyle></Style>
+  <Style id="grocery"><IconStyle><color>ff28a745</color></IconStyle></Style>
+  <Style id="lot"><IconStyle><color>fffd7e14</color></IconStyle></Style>
+  <Style id="other"><IconStyle><color>ff6c757d</color></IconStyle></Style>
+  {% for s in spots %}
+  <Placemark>
+    <name>{{ s.name | e }}</name>
+    <description><![CDATA[
+      {% if s.get('max_hours') %}
+      <b>Parking:</b> {% if s.get('hours_source_url') %}<a href="{{ s.hours_source_url | e }}">{{ s.max_hours | e }}</a>{% else %}{{ s.max_hours | e }}{% endif %}<br>
+      {% endif %}
+      <b>Validation:</b> {{ "Required" if s.validation_required else "Not required" }}<br>
+      {{ s.snippet | e }}
+    ]]></description>
+    <styleUrl>#{{ s.type }}</styleUrl>
+    <Point><coordinates>{{ s.lng }},{{ s.lat }},0</coordinates></Point>
+  </Placemark>
+  {% endfor %}
+</Document>
+</kml>
